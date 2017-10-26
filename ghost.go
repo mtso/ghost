@@ -1,10 +1,10 @@
 package main
 
 import (
-	"path"
 	"fmt"
-	"os"
 	"io/ioutil"
+	"os"
+	"path"
 )
 
 const (
@@ -19,7 +19,7 @@ var (
 func ghost(pathname string, file os.FileInfo) {
 	p := path.Join(pathname, file.Name())
 
-	if file.IsDir() {	
+	if file.IsDir() {
 		fs, err := ioutil.ReadDir(p)
 		if err != nil {
 			fmt.Println("error on:", file.Name())
