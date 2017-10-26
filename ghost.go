@@ -7,9 +7,14 @@ import (
 	"io/ioutil"
 )
 
-const USER_FILEMODE = 0644
-const GHOST_MESSAGE = "ghosted:"
-const BLANK = []byte{}
+const (
+	USER_FILEMODE = 0644
+	GHOST_MESSAGE = "ghosted:"
+)
+
+var (
+	BLANK = []byte{}
+)
 
 func ghost(pathname string, file os.FileInfo) {
 	p := path.Join(pathname, file.Name())
